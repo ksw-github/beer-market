@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@mixin box-shadow {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.041), 0 3px 6px rgba(0, 0, 0, 0.082);
+}
+
+@mixin primary-button {
+  background-color: #3369e8;
+  border: 1px solid #3369e8;
+  border-radius: 5px;
+  color: #ffff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@mixin active-button {
+  border: 1px solid #3369e8;
+  background-color: #e6e7ee;
+  color: #3369e8;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@mixin disabled-button {
+  background-color: #e6e7ee;
+  border: none;
+  color: #666;
+  padding: 10px;
+}
+
+@mixin close-button {
+  background-color: #e6e7ee;
+  border: none;
+  color: #666;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@mixin more-button {
+  background-color: #ffff;
+  border: none;
+  color: inherit;
+  padding: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  @include box-shadow();
+}
+
+@mixin card {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #ffff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+
+  .info {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    text-align: left;
+  }
+
+  img {
+    width: 50px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: right;
+  }
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #e6e7ee;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 1920px) {
+  main {
+    margin: 15px;
+  }
+
+  header {
+    background-color: #ffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  button {
+    @include primary-button;
+  }
+
+  button.buy {
+    @include primary-button;
+    width: 100%;
+  }
+
+  button.more {
+    @include more-button;
+  }
+
+  button.close {
+    @include close-button;
+  }
+
+  button.disabled {
+    @include disabled-button;
+  }
+
+  button.active {
+    @include active-button;
+  }
+
+  .card {
+    @include card;
+  }
+
+  .total {
+    text-align: right;
+  }
+}
