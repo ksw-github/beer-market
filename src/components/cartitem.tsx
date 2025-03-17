@@ -45,4 +45,19 @@ export const CartProvider: React.FC = ({ children }) => {
     const item = cart.find((beer) => beer.id === beerId);
     return item ? item.count : 0;
   };
+
+  return (
+    <CartContext.Provider value={{ cart, addToCart, getCartItemCount }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+//장바구니 상태 커스텀훅
+export const useCart = (): CartContextType => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("장바구니값 에러");
+  }
+  return context;
 };
