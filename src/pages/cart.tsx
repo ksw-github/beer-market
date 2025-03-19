@@ -1,44 +1,83 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../components/cartitem";
 
 const Cart = () => {
+  const { cart, setCart, getCartItemCount, removeCartItem } = useCart(); //장바구니 상태
+  const totalCount = cart.reduce((acc, item) => acc + item.count, 0); //총 구매수량
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + item.price * item.count,
+    0
+  ); //총 결제금액
+
+  //장바구니 초기화
+  const handleBuy = () => {
+    console.log("구매 내역:", cart);
+    setCart([]);
+  };
+
   return (
     <main>
-      <ul className="list">
-        <li>
-          <div className="info">
-            <div>
-              <img src="/beer01.jpg" alt="맥주" />
-            </div>
-            <div>
-              <h3>맥주</h3>
-              <p>가격 : 1000원</p>
-              <p>수량 : </p>
-            </div>
-          </div>
-          <div className="btn">
-            <button className="close">취소</button>
-          </div>
-        </li>
-      </ul>
-      <div className="total">
-        <p>총 구매수량 개</p>
-        <p>총 결제금액 원</p>
-      </div>
-      <button className="buy">구매하기</button>
-      <div>
+      {cart.length > 0 ? (
         <div>
-          <img src="/bag.png" alt="빈바구니" className="bag" />
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id} className="card">
+                <div className="info">
+                  <div>
+                    <img src={item.image} alt={item.name} />
+                  </div>
+                  <div>
+                    <h3>{item.name}</h3>
+                    {item.tags.map((tag) => (
+                      <span key={tag.key}>#{tag.name}&nbsp;&nbsp;</span>
+                    ))}
+                    <p>
+                      <b>{new Intl.NumberFormat().format(item.price)}</b>원
+                    </p>
+                    <p>
+                      수량 : <b>{getCartItemCount(item.id)}</b>
+                    </p>
+                  </div>
+                </div>
+                <div className="btn">
+                  <button
+                    onClick={() => removeCartItem(item.id)}
+                    className="close"
+                  >
+                    취소
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="total">
+            <p>
+              총 구매수량 <b>{totalCount}</b> 개
+            </p>
+            <p>
+              총 결제금액 <b>{new Intl.NumberFormat().format(totalPrice)}</b> 원
+            </p>
+          </div>
+          <button onClick={handleBuy} className="buy">
+            구매하기
+          </button>
         </div>
-        <h2>카트가 비었습니다</h2>
-        <p>
-          목록에서 원하는 맥주를
-          <br />
-          카트에 담아보세요
-        </p>
-      </div>
-      <Link to="/">
-        <button>목록으로 가기</button>
-      </Link>
+      ) : (
+        <div className="blank">
+          <div>
+            <img src="/bag.png" alt="빈바구니" />
+          </div>
+          <h2>카트가 비었습니다</h2>
+          <p>
+            목록에서 원하는 맥주를
+            <br />
+            카트에 담아보세요
+          </p>
+          <Link to="/">
+            <button>목록으로 가기</button>
+          </Link>
+        </div>
+      )}
     </main>
   );
 };

@@ -3,16 +3,19 @@ import Header from "./components/header";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import "./styles/global.scss";
+import { CartProvider } from "./components/cartitem";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../components/cartitem";
 
 interface Tag {
   key: string;
@@ -19,6 +20,13 @@ const Home = () => {
   const [tags, setTags] = useState<Tag[]>([]); //태그 목록
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set()); //태그 선택
   const [visibleBeers, setVisibleBeers] = useState(3); //보일 맥주 수
+  const {
+    cart,
+    addToCart,
+    getCartItemCount,
+    getCartItemStock,
+    removeCartItem,
+  } = useCart(); //장바구니 상태
 
   // 맥주, 태그 목록 가져오기
   useEffect(() => {
@@ -34,10 +42,12 @@ const Home = () => {
         const beersData: Beer[] = await beersResponse.json();
         const tagsData: Tag[] = await tagResponse.json();
 
+        console.log(beersData);
+
         setBeers(beersData);
         setTags(tagsData);
       } catch (error) {
-        console.error(error);
+        console.error("목록/태그 로딩 오류", error);
       }
     };
     fetchBeers();
@@ -74,6 +84,28 @@ const Home = () => {
     setVisibleBeers((prevCount) => prevCount + 3);
   };
 
+  //장바구니에 추가
+  const handleAddToCart = (beer: Beer) => {
+    if (beer.stock > 0) {
+      //장바구니에서 해당 맥주를 찾음
+      const cartItem = cart.find((item) => item.id === beer.id);
+      if (cartItem) {
+        if (cartItem.count < beer.stock) {
+          //해당 맥주 수량이 재고량을 초과하지 않도록 제한
+          addToCart({ ...beer, count: cartItem.count + 1 });
+        }
+      } else {
+        //장바구니에 없으면 처음으로 추가
+        addToCart({ ...beer, count: 1 });
+      }
+    }
+  };
+
+  //장바구니에서 삭제
+  const handleRemoveFromCart = (beer: Beer) => {
+    removeCartItem(beer.id);
+  };
+
   return (
     <main>
       {tags.map((tag) => (
@@ -102,12 +134,28 @@ const Home = () => {
                 <p>
                   <b>{new Intl.NumberFormat().format(beer.price)}</b>원
                   <br />
-                  재고 <b>{beer.stock}</b>
+                  재고
+                  <b>{getCartItemStock(beer.id)}</b>
+                  수량 <b>{getCartItemCount(beer.id)}</b>
                 </p>
               </div>
             </div>
             <div className="btn">
-              <button>담기</button>
+              {getCartItemCount(beer.id) > 0 && (
+                <button
+                  className="close"
+                  onClick={() => handleRemoveFromCart(beer)}
+                >
+                  빼기
+                </button>
+              )}
+              &nbsp;&nbsp;
+              <button
+                onClick={() => handleAddToCart(beer)}
+                disabled={getCartItemStock(beer.id) === 0}
+              >
+                담기
+              </button>
             </div>
           </li>
         ))}

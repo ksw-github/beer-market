@@ -21,13 +21,6 @@
   cursor: pointer;
 }
 
-@mixin disabled-button {
-  background-color: #e6e7ee;
-  border: none;
-  color: #666;
-  padding: 10px;
-}
-
 @mixin close-button {
   background-color: #e6e7ee;
   border: none;
@@ -74,7 +67,6 @@
 body {
   font-family: "Noto Sans", sans-serif;
   background-color: #e6e7ee;
-  width: 100%;
   margin: 0;
   text-align: center;
 }
@@ -99,12 +91,27 @@ body {
     }
   }
 
+  a {
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+    }
+  }
+
   h3 {
     margin-bottom: 0;
   }
 
   button {
     @include primary-button;
+  }
+
+  button:disabled {
+    background-color: #d4d4d4;
+    border: none;
+    color: gray;
+    padding: 10px;
+    cursor: not-allowed;
   }
 
   button.buy {
@@ -120,10 +127,6 @@ body {
     @include close-button;
   }
 
-  button.disabled {
-    @include disabled-button;
-  }
-
   button.active {
     @include active-button;
   }
@@ -134,5 +137,15 @@ body {
 
   .total {
     text-align: right;
+  }
+
+  .total-icon {
+    width: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: 5px;
   }
 }
