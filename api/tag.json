@@ -1,0 +1,26 @@
+[
+  {
+    "key": "lager",
+    "name": "라거"
+  },
+  {
+    "key": "ale",
+    "name": "에일"
+  },
+  {
+    "key": "lambic",
+    "name": "람빅"
+  },
+  {
+    "key": "other",
+    "name": "기타"
+  },
+  {
+    "key": "domestic",
+    "name": "국산맥주"
+  },
+  {
+    "key": "imported",
+    "name": "수입맥주"
+  }
+]

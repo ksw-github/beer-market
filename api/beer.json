@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "황금 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lager",
+        "name": "라거"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 14000,
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "name": "다크 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "ale",
+        "name": "에일"
+      },
+      {
+        "key": "imported",
+        "name": "수입맥주"
+      }
+    ],
+    "price": 14500,
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "name": "한국 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lambic",
+        "name": "람빅"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 3500,
+    "stock": 4
+  },
+  {
+    "id": 4,
+    "name": "블론드 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "other",
+        "name": "기타"
+      },
+      {
+        "key": "imported",
+        "name": "수입맥주"
+      }
+    ],
+    "price": 3500,
+    "stock": 4
+  },
+  {
+    "id": 5,
+    "name": "스위트 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lager",
+        "name": "라거"
+      },
+      {
+        "key": "imported",
+        "name": "수입맥주"
+      }
+    ],
+    "price": 3500,
+    "stock": 7
+  },
+  {
+    "id": 6,
+    "name": "강서 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "ale",
+        "name": "에일"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 3500,
+    "stock": 6
+  },
+  {
+    "id": 7,
+    "name": "바나나 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lambic",
+        "name": "람빅"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 7000,
+    "stock": 8
+  },
+  {
+    "id": 8,
+    "name": "타이거 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lambic",
+        "name": "람빅"
+      },
+      {
+        "key": "imported",
+        "name": "수입맥주"
+      }
+    ],
+    "price": 7000,
+    "stock": 8
+  },
+  {
+    "id": 9,
+    "name": "밤 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lambic",
+        "name": "람빅"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 8000,
+    "stock": 3
+  },
+  {
+    "id": 10,
+    "name": "자몽 맥주",
+    "image": "/beer01.jpg",
+    "tags": [
+      {
+        "key": "lager",
+        "name": "라거"
+      },
+      {
+        "key": "domestic",
+        "name": "국산맥주"
+      }
+    ],
+    "price": 9000,
+    "stock": 2
+  }
+]
