@@ -65,7 +65,7 @@ const Cart = () => {
       ) : (
         <div className="blank">
           <div>
-            <img src="/bag.png" alt="빈바구니" />
+            <img src="/beer-market/bag.png" alt="빈바구니" />
           </div>
           <h2>카트가 비었습니다</h2>
           <p>
@@ -73,7 +73,7 @@ const Cart = () => {
             <br />
             카트에 담아보세요
           </p>
-          <Link to="/">
+          <Link to="/beer-market">
             <button>목록으로 가기</button>
           </Link>
         </div>

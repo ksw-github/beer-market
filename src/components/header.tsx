@@ -12,14 +12,24 @@ const Header = () => {
         <span>맥주 담기</span>
       </div>
       <div>
-        <Link to="/">
-          <img src={location.pathname === "/" ? "/list02.png" : "/list.png"} />
+        <Link to="/beer-market">
+          <img
+            src={
+              location.pathname === "/beer-market"
+                ? "/beer-market/list02.png"
+                : "/beer-market/list.png"
+            }
+          />
         </Link>
         &nbsp;&nbsp;&nbsp;
         <Link to="/cart">
           {totalCount > 0 && <div className="total-icon">{totalCount}</div>}
           <img
-            src={location.pathname === "/cart" ? "/cart02.png" : "/cart.png"}
+            src={
+              location.pathname === "/cart"
+                ? "/beer-market/cart02.png"
+                : "/beer-market/cart.png"
+            }
           />
         </Link>
       </div>

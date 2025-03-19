@@ -32,8 +32,8 @@ const Home = () => {
   useEffect(() => {
     const fetchBeers = async () => {
       try {
-        const beersResponse = await fetch("/api/beer.json");
-        const tagResponse = await fetch("/api/tag.json");
+        const beersResponse = await fetch("/beer-market/api/beer.json");
+        const tagResponse = await fetch("/beer-market/api/tag.json");
 
         if (!beersResponse.ok || !tagResponse.ok) {
           throw new Error("API 오류");

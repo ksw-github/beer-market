@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "황금 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lager",
@@ -19,7 +19,7 @@
   {
     "id": 2,
     "name": "다크 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "ale",
@@ -36,7 +36,7 @@
   {
     "id": 3,
     "name": "한국 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lambic",
@@ -53,7 +53,7 @@
   {
     "id": 4,
     "name": "블론드 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "other",
@@ -70,7 +70,7 @@
   {
     "id": 5,
     "name": "스위트 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lager",
@@ -87,7 +87,7 @@
   {
     "id": 6,
     "name": "강서 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "ale",
@@ -104,7 +104,7 @@
   {
     "id": 7,
     "name": "바나나 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lambic",
@@ -121,7 +121,7 @@
   {
     "id": 8,
     "name": "타이거 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lambic",
@@ -138,7 +138,7 @@
   {
     "id": 9,
     "name": "밤 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lambic",
@@ -155,7 +155,7 @@
   {
     "id": 10,
     "name": "자몽 맥주",
-    "image": "/beer01.jpg",
+    "image": "/beer-market/beer01.jpg",
     "tags": [
       {
         "key": "lager",
