@@ -42,8 +42,6 @@ const Home = () => {
         const beersData: Beer[] = await beersResponse.json();
         const tagsData: Tag[] = await tagResponse.json();
 
-        console.log(beersData);
-
         setBeers(beersData);
         setTags(tagsData);
       } catch (error) {
