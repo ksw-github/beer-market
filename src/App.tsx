@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Cart from "./pages/cart";
 import "./styles/global.scss";
 import { CartProvider } from "./components/cartitem";
+import { URL } from "./router/constants";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/beer-market" element={<Home />} />
+          <Route path={URL} element={<Home />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>

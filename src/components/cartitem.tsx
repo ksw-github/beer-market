@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-
+import { URL } from "../router/constants";
 interface Tag {
   key: string;
   name: string;
@@ -36,7 +36,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const fetchBeers = async () => {
       try {
-        const response = await fetch("/beer-market/api/beer.json");
+        const response = await fetch(`${URL}/api/beer.json`);
         const data: CartItem[] = await response.json();
         setBeers(data);
       } catch (error) {

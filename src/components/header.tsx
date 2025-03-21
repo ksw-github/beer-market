@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useCart } from "./cartitem";
+import { URL } from "../router/constants";
 
 const Header = () => {
   const location = useLocation();
@@ -12,12 +13,10 @@ const Header = () => {
         <span>맥주 담기</span>
       </div>
       <div>
-        <Link to="/beer-market">
+        <Link to={`${URL}`}>
           <img
             src={
-              location.pathname === "/beer-market"
-                ? "/beer-market/list02.png"
-                : "/beer-market/list.png"
+              location.pathname === URL ? `${URL}list02.png` : `${URL}list.png`
             }
           />
         </Link>
@@ -27,8 +26,8 @@ const Header = () => {
           <img
             src={
               location.pathname === "/cart"
-                ? "/beer-market/cart02.png"
-                : "/beer-market/cart.png"
+                ? `${URL}cart02.png`
+                : `${URL}cart.png`
             }
           />
         </Link>

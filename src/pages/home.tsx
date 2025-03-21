@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCart } from "../components/cartitem";
+import { URL } from "../router/constants";
 
 interface Tag {
   key: string;
@@ -32,8 +33,8 @@ const Home = () => {
   useEffect(() => {
     const fetchBeers = async () => {
       try {
-        const beersResponse = await fetch("/beer-market/api/beer.json");
-        const tagResponse = await fetch("/beer-market/api/tag.json");
+        const beersResponse = await fetch(`${URL}/api/beer.json`);
+        const tagResponse = await fetch(`${URL}/api/tag.json`);
 
         if (!beersResponse.ok || !tagResponse.ok) {
           throw new Error("API 오류");
@@ -122,7 +123,7 @@ const Home = () => {
           <li key={beer.id} className="card">
             <div className="info">
               <div>
-                <img src={beer.image} alt={beer.name} width={100} />
+                <img src={`${URL}${beer.image}`} alt={beer.name} width={100} />
               </div>
               <div>
                 <h3>{beer.name}</h3>

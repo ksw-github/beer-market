@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../components/cartitem";
+import { URL } from "../router/constants";
 
 const Cart = () => {
   const { cart, setCart, getCartItemCount, removeCartItem } = useCart(); //장바구니 상태
@@ -24,7 +25,7 @@ const Cart = () => {
               <li key={item.id} className="card">
                 <div className="info">
                   <div>
-                    <img src={item.image} alt={item.name} />
+                    <img src={`${URL}${item.image}`} alt={item.name} />
                   </div>
                   <div>
                     <h3>{item.name}</h3>
@@ -65,7 +66,7 @@ const Cart = () => {
       ) : (
         <div className="blank">
           <div>
-            <img src="/beer-market/bag.png" alt="빈바구니" />
+            <img src={`${URL}bag.png`} alt="빈바구니" />
           </div>
           <h2>카트가 비었습니다</h2>
           <p>
@@ -73,7 +74,7 @@ const Cart = () => {
             <br />
             카트에 담아보세요
           </p>
-          <Link to="/beer-market">
+          <Link to={URL}>
             <button>목록으로 가기</button>
           </Link>
         </div>
