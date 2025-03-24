@@ -9,10 +9,10 @@ const Header = () => {
   const totalCount = cart.reduce((acc, item) => acc + item.count, 0); //총 구매수량
   return (
     <header>
-      <div>
+      <div className="logo">
         <span>맥주 담기</span>
       </div>
-      <div>
+      <div className="menu">
         <Link to={`${URL}`}>
           <img
             src={
@@ -20,7 +20,7 @@ const Header = () => {
             }
           />
         </Link>
-        &nbsp;&nbsp;&nbsp;
+        {/* &nbsp;&nbsp;&nbsp; */}
         <Link to="/cart">
           {totalCount > 0 && <div className="total-icon">{totalCount}</div>}
           <img

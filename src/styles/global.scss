@@ -44,7 +44,7 @@
   grid-template-columns: 1fr;
   background-color: #ffff;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 20px;
 
   .info {
@@ -73,16 +73,25 @@ body {
 
 @media (max-width: 1920px) {
   main {
-    margin: 15px;
+    padding: 70px 15px 0;
   }
 
   header {
-    background-color: #ffff;
+    width: 100%;
     display: flex;
-    //픽스
+    position: fixed;
     justify-content: space-between;
-    padding: 15px;
+    background-color: #ffff;
     @include box-shadow();
+  }
+
+  .logo {
+    margin: 15px;
+  }
+
+  .menu a {
+    display: inline-block;
+    margin: 15px 15px 15px 0;
   }
 
   ul {
