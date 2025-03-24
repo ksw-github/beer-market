@@ -136,9 +136,8 @@ const Home = () => {
                 <p>
                   <b>{new Intl.NumberFormat().format(beer.price)}</b>원
                   <br />
-                  재고
-                  <b>{getCartItemStock(beer.id)}</b>
-                  수량 <b>{getCartItemCount(beer.id)}</b>
+                  재고 <b>{getCartItemStock(beer.id)}</b> 수량{" "}
+                  <b>{getCartItemCount(beer.id)}</b>
                 </p>
               </div>
             </div>

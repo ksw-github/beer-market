@@ -20,7 +20,6 @@ const Header = () => {
             }
           />
         </Link>
-        {/* &nbsp;&nbsp;&nbsp; */}
         <Link to="/cart">
           {totalCount > 0 && <div className="total-icon">{totalCount}</div>}
           <img
