@@ -78,6 +78,9 @@ const Home = () => {
           return beer.tags.some((tag) => selectedTags.has(tag.key));
         });
 
+  //태그 많은 순서로 정렬
+  const sortedBeers = filterBeers.sort((a, b) => b.tags.length - a.tags.length);
+
   //더보기 3개씩 보이게
   const loadMore = () => {
     setVisibleBeers((prevCount) => prevCount + 3);
@@ -119,7 +122,7 @@ const Home = () => {
         </span>
       ))}
       <ul>
-        {filterBeers.slice(0, visibleBeers).map((beer) => (
+        {sortedBeers.slice(0, visibleBeers).map((beer) => (
           <li key={beer.id} className="card">
             <div className="info">
               <div>

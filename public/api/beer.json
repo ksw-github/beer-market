@@ -11,6 +11,10 @@
       {
         "key": "domestic",
         "name": "국산맥주"
+      },
+      {
+        "key": "other",
+        "name": "기타"
       }
     ],
     "price": 14000,
@@ -19,7 +23,7 @@
   {
     "id": 2,
     "name": "다크 맥주",
-    "image": "beer01.jpg",
+    "image": "beer02.png",
     "tags": [
       {
         "key": "ale",
@@ -36,7 +40,7 @@
   {
     "id": 3,
     "name": "한국 맥주",
-    "image": "beer01.jpg",
+    "image": "beer03.jpg",
     "tags": [
       {
         "key": "lambic",
@@ -53,7 +57,7 @@
   {
     "id": 4,
     "name": "블론드 맥주",
-    "image": "beer01.jpg",
+    "image": "beer04.png",
     "tags": [
       {
         "key": "other",
@@ -70,7 +74,7 @@
   {
     "id": 5,
     "name": "스위트 맥주",
-    "image": "beer01.jpg",
+    "image": "beer05.png",
     "tags": [
       {
         "key": "lager",
@@ -87,7 +91,7 @@
   {
     "id": 6,
     "name": "강서 맥주",
-    "image": "beer01.jpg",
+    "image": "beer06.png",
     "tags": [
       {
         "key": "ale",
@@ -104,7 +108,7 @@
   {
     "id": 7,
     "name": "바나나 맥주",
-    "image": "beer01.jpg",
+    "image": "beer07.png",
     "tags": [
       {
         "key": "lambic",
@@ -121,7 +125,7 @@
   {
     "id": 8,
     "name": "타이거 맥주",
-    "image": "beer01.jpg",
+    "image": "beer08.png",
     "tags": [
       {
         "key": "lambic",
@@ -138,7 +142,7 @@
   {
     "id": 9,
     "name": "밤 맥주",
-    "image": "beer01.jpg",
+    "image": "beer09.png",
     "tags": [
       {
         "key": "lambic",
@@ -155,7 +159,7 @@
   {
     "id": 10,
     "name": "자몽 맥주",
-    "image": "beer01.jpg",
+    "image": "beer10.png",
     "tags": [
       {
         "key": "lager",
