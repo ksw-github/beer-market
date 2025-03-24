@@ -36,7 +36,7 @@ const Cart = () => {
                       <b>{new Intl.NumberFormat().format(item.price)}</b>원
                     </p>
                     <p>
-                      수량 : <b>{getCartItemCount(item.id)}</b>
+                      수량 <b>{getCartItemCount(item.id)}</b>
                     </p>
                   </div>
                 </div>
